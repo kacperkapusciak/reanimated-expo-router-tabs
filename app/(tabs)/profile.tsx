@@ -1,16 +1,10 @@
-import { Image, View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { Image } from "expo-image";
+
+const image = require("../../assets/profile.jpg");
 
 export default function ProfileScreen() {
-  return (
-    <View>
-      <Image
-        source={{
-          uri: "https://picsum.photos/id/11/400/850?grayscale",
-        }}
-        style={styles.image}
-      />
-    </View>
-  );
+  return <Image source={image} style={styles.image} />;
 }
 
 const styles = StyleSheet.create({
