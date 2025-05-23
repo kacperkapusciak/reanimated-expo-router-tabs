@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text } from "react-native";
-import { ACTIVE_COLOR, INACTIVE_COLOR } from "../constants/Colors";
+import { ACTIVE_COLOR, INACTIVE_COLOR } from "../constants/colors";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,

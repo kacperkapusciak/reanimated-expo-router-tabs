@@ -1,4 +1,4 @@
-import { Tabs } from "expo-router";
+import { Tabs, usePathname } from "expo-router";
 import { StyleSheet } from "react-native";
 
 import { BlurView } from "expo-blur";
@@ -8,6 +8,7 @@ import { ExploreIcon } from "../../icons/ExploreIcon";
 import { ProfileIcon } from "../../icons/ProfileIcon";
 
 export default function TabLayout() {
+  const pathname = usePathname();
   return (
     <Tabs
       screenOptions={{
@@ -26,10 +27,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          tabBarButton: ({ accessibilityState, onPress }) => (
+          tabBarButton: ({ onPress }) => (
             <TabBarButton
               title="Home"
-              focused={accessibilityState?.selected}
+              focused={pathname === "/"}
               icon={HomeIcon}
               onPress={onPress}
             />
@@ -39,10 +40,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          tabBarButton: ({ accessibilityState, onPress }) => (
+          tabBarButton: ({ onPress }) => (
             <TabBarButton
               title="Explore"
-              focused={accessibilityState?.selected}
+              focused={pathname === "/explore"}
               icon={ExploreIcon}
               onPress={onPress}
             />
@@ -52,10 +53,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarButton: ({ accessibilityState, onPress }) => (
+          tabBarButton: ({ onPress }) => (
             <TabBarButton
               title="Profile"
-              focused={accessibilityState?.selected}
+              focused={pathname === "/profile"}
               icon={ProfileIcon}
               onPress={onPress}
             />
